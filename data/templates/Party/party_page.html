@@ -105,7 +105,51 @@
                 </div>
             </div>
         </div>
-        {% for loc in local %}
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-lg-4 col-md-12">
+                    <form action="" method="get">
+                        <div class="input-group mb-3">
+                            <select name="orderLocal" class="form-select" id="inputGroupSelect01"
+                                    aria-label="Example select with button addon">
+                                <option value="all" selected>Choose locals...</option>
+                                {% for age in locals %}
+                                <option value="{{ age.nameLocal }}">{{ age.nameLocal }}</option>
+                                {% endfor %}
+                            </select>
+                            <button class="btn btn-outline-secondary" type="submit">submit</button>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <form action="" method="get">
+                        <div class="input-group mb-3">
+
+                            <select name="orderAge" class="form-select" id="inputGroupSelect03"
+                                    aria-label="Example select with button addon">
+                                <option selected value="all">Choose age...</option>
+                                {% for age in partyAge %}
+                                <option value="{{age.age_party}}">{{age.age_party}}+</option>
+                                {% endfor %}
+                            </select>
+                            <button class="btn btn-outline-secondary" type="submit">submit</button>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <form action="" method="get">
+                        <div class="input-group mb-3">
+                            <input name="search" type="search" class="form-control"
+                                   aria-label="Recipient's username" aria-describedby="button-addon2">
+                            <button class="btn btn-outline-secondary" type="submit" id="button-addon2">submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        {% for party in party_List %}
         <div class="container mb-4">
             <div class="row ">
                 <div class="col-md-6">
