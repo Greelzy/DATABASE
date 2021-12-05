@@ -55,7 +55,7 @@
             <nav class="nav justify-content-end" id="nav-menu-container">
                 <ul class="nav-menu">
                     <li class="menu-active"><a href="{% url 'home_page' %}">Home</a></li>
-                    <li><a href="about.html">About local</a></li>
+                    <li><a href="{% url 'aboutlocal' %}">About local</a></li>
                     <li><a href="{% url 'party_page' %}">Party</a></li>
                     {% if user.is_authenticated %}
                     <li>
