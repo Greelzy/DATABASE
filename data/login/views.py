@@ -25,7 +25,7 @@ def registation(request):
     if request.method == 'POST':
         username = request.POST.get('user_name')
         password = request.POST.get('password')
-        mail = request.POST.get('user_name')
+        mail = request.POST.get('user_mail')
         if User.objects.filter(username=username).exists():
             message = 1
             return render(request, 'Login/registration.html', {'message': message})

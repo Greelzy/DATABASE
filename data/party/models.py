@@ -1,6 +1,6 @@
 from django.db import models
 from django.db.models import DateTimeField
-
+from django.contrib.auth.models import User
 
 # Create your models here.
 
@@ -26,4 +26,13 @@ class Tickets(models.Model):
     ID_Local = models.ForeignKey(LocalsParty, on_delete=models.CASCADE)
 
 
+
+# Create your models here.
+
+class Sales(models.Model):
+    User_id = models.ForeignKey(User, on_delete=models.CASCADE)
+    tickets_id = models.ForeignKey(Tickets, on_delete=models.CASCADE)
+    dataSales = DateTimeField(blank=True)
+    countTicket = models.IntegerField()
+    price_Ticket= models.IntegerField()
 

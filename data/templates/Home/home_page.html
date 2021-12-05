@@ -32,7 +32,7 @@
 </head>
 <body>
 
-<header id="header" id="home">
+<header id="header">
     <div class="container header-top">
         <div class="row">
             <div class="col-6 top-head-left">
@@ -57,12 +57,21 @@
             </div>
             <nav id="nav-menu-container">
                 <ul class="nav-menu">
-                    <li class="menu-active"><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
+                    <li class="menu-active"><a href="{% url 'home_page' %}">Home</a></li>
+                     <li><a href="{% url 'aboutlocal' %}">About local</a></li>
                     <li><a href="{% url 'party_page' %}">Party</a></li>
-                    <li><a href="ticket.html">My party</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                    {% if user.is_authenticated %}
+                    <li>
+                        <div class="btn-group" role="group" aria-label="Basic example">
+                            <a class="btn btn-info" href="{% url 'login' %}">Hello - {{ user }}</a>
+                            <a class="btn btn-info" href="{% url 'exit' %}">Logout</a>
+                        </div>
+                    </li>
+
+                    {% else %}
                     <li><a href="{% url 'login' %}">Sign in</a></li>
+                    {% endif %}
+
                 </ul>
             </nav><!-- #nav-menu-container -->
         </div>
