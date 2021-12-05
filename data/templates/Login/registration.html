@@ -15,7 +15,7 @@
     <!-- meta character set -->
     <meta charset="UTF-8">
     <!-- Site Title -->
-    <title>Art Museum</title>
+    <title>Party Search</title>
 
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet">
     <!--
@@ -81,7 +81,25 @@
     </div>
 </section>
 <!-- End banner Area -->
-
+<div class="card box">
+                    <form method="POST">
+                        {% csrf_token %}
+                        <h3>Cinema Repnik</h3>
+                        <p class="text-muted"> Please enter input!</p>
+                        <div class="col"><input type="text" name="user_name" placeholder="Username" required></div>
+                        <div class="col"><input type="email" name="user_mail" placeholder="E-mail" required></div>
+                        <div class="col"><input type="password" name="password" placeholder="Password" required></div>
+                        <div class="col"><a class="forgot text-muted" href="{% url 'exit' %}">Forgot password?</a></div>
+                        <input type="submit" name="" value="Registation" href="#">
+                        <div class="col-md-12">
+                            <ul class="social-network social-circle">
+                                <li style="color: white"><a href="{% url 'login' %}" class="regicon" title="Google +"><i
+                                        class="fas fa-users"></i></a> Authorization
+                                </li>
+                            </ul>
+                        </div>
+                    </form>
+                </div>
 <!-- start footer Area -->
 <footer class="footer-area section-gap">
     <div class="container">

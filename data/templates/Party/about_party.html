@@ -15,7 +15,7 @@
     <!-- meta character set -->
     <meta charset="UTF-8">
     <!-- Site Title -->
-    <title>Art Museum</title>
+    <title>Party Search</title>
 
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet">
     <!--
@@ -84,27 +84,32 @@
 <div class="container mt-3">
     <div class="row text-center">
         <div class="col-md-6">
-            <img src="{{ party.image_party.url }}" alt="">
+            <img src="{{ tickets.ID_Party.image_party.url }}" alt="">
         </div>
         <div class="col-md-6  text-left">
-            <h3>{{ party.name_party }} {{ party.age_party }}+</h3>
-            <p>{{ party.info_party }}</p>
+            <h3>{{ tickets.ID_Party.name_party }} {{ tickets.ID_Party.age_party }}+</h3>
+            <p>{{ tickets.ID_Party.info_party }}</p>
         </div>
     </div>
 <hr class="mb-5 mt-4">
     <div class="container" >
       <div class="row">
-<!--            tickets-->
-          <button class="btn btn-success">Buy</button>
+           <div class="col-lg-4 col-md-12">
+            <a href="{% url 'ticketsInfo' tickets.ID_Party.id tickets.id %}" class="btn btn-success">Buy </a>
+
+
+          </div>
+            <div class="col-lg-4 col-md-12">
+             <h3>count_ticket {{ tickets.count_ticket }}</h3>
+                    <p>Price: {{ tickets.price }}$</p>
+          </div>
+               <div class="col-lg-4 col-md-12">
+               <h3>{{ tickets.ID_Local.nameLocal }}</h3>
+                <p>{{ tickets.ID_Local.address }}</p>
+          </div>
         </div>
     </div>
     <hr class="mb-5 mt-4">
-        <div >
-      <div class="row">
-
-<!--            mesto-->
-        </div>
-    </div>
 </div>
 
 <!-- start footer Area -->

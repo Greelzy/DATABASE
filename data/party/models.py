@@ -20,7 +20,6 @@ class LocalsParty(models.Model):
 
 class Tickets(models.Model):
     price = models.IntegerField(blank=True)
-    name_party = models.CharField(max_length=50, blank=True)
     date = DateTimeField(blank=True)
     count_ticket = models.IntegerField(blank=True)
     ID_Party = models.ForeignKey(Party, on_delete=models.CASCADE)
